@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator1 {
@@ -25,7 +24,7 @@ public class Calculator1 {
                 String secondInput = sc.nextLine();
                 second_number = Integer.parseInt(secondInput);
 
-            } catch (InputMismatchException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("정수만 입력하세요.");
                 continue;
             }
