@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator1 {
@@ -10,43 +11,42 @@ public class Calculator1 {
             int second_number;
 
             try {
-                System.out.print("첫 번째 숫자 입력 (종료하려면 exit): ");
-                String first_Input = sc.nextLine();
+                System.out.print("첫 번째 숫자 입력 : ");
+                first_number = sc.nextInt();
 
-                if (first_Input.equalsIgnoreCase("exit")) {
-                    System.out.println("계산기를 종료합니다!");
+                System.out.print("두 번째 숫자 입력: ");
+                second_number = sc.nextInt();
+
+                System.out.print("연산자를 입력하세요(+, -, *, /) : ");
+                String input = sc.next();
+                char operator = input.charAt(0);
+
+                switch (operator) {
+                    case '+':
+                        System.out.println(first_number + "+" + second_number + "=" + (first_number + second_number));
+                        break;
+                    case '-':
+                        System.out.println(first_number + "-" + second_number + "=" + (first_number - second_number));
+                        break;
+                    case '*':
+                        System.out.println(first_number + "*" + second_number + "=" + (first_number * second_number));
+                        break;
+                    case '/':
+                        System.out.println(first_number + "/" + second_number + "=" + (first_number / second_number));
+                        break;
+                }
+
+                System.out.println("더 계산하시겠습니까? 더 계산하시려면 아무 키나 눌러주세요(exit 입력 시 종료) : ");
+                String exit = sc.next();
+
+                if(exit.equals("exit")) {
+                    System.out.println("계산기를 종료합니다.");
                     break;
                 }
 
-                first_number = Integer.parseInt(first_Input);
-
-                System.out.print("두 번째 숫자 입력: ");
-                String secondInput = sc.nextLine();
-                second_number = Integer.parseInt(secondInput);
-
-            } catch (NumberFormatException e) {
+            } catch (InputMismatchException e) {
                 System.out.println("정수만 입력하세요.");
-                continue;
-            }
-
-
-            System.out.print("연산자를 입력하세요(+, -, *, /) : ");
-            String operator = sc.next();
-
-
-            switch (operator) {
-                case "+":
-                    System.out.println(first_number + "+" + second_number + "=" + (first_number + second_number));
-                    break;
-                case "-":
-                    System.out.println(first_number + "-" + second_number + "=" + (first_number - second_number));
-                    break;
-                case "*":
-                    System.out.println(first_number + "*" + second_number + "=" + (first_number * second_number));
-                    break;
-                case "/":
-                    System.out.println(first_number + "/" + second_number + "=" + (first_number / second_number));
-                    break;
+                sc.nextLine();
             }
         }
     }
