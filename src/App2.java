@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Calculator2 {
+public class App2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -62,7 +62,6 @@ public class Calculator2 {
                 result = first_number / second_number;
                 break;
             }
-
 
             return result;
         }
