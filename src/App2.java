@@ -21,11 +21,6 @@ public class App2 {
                 System.out.print("연산자를 입력하세요(+, -, *, /) : ");
                 String input  = sc.next();
 
-                if(input.equals("exit")) {
-                    System.out.println("계산기를 종료합니다!");
-                    break;
-                }
-
                 char operator = input.charAt(0);
 
                 int calculate = calculator.calculate(first_number, second_number, operator);

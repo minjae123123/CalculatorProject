@@ -24,7 +24,7 @@ public class App3 {
                 char operator = input.charAt(0);
 
                 int calculate = calculator.calculate(first_number, second_number, operator);
-                System.out.println("결과: " + calculate);
+                System.out.println(first_number  +""+ operator + second_number + "=" + calculate);
 
                 System.out.println("더 계산하시겠습니까? 더 계산하시려면 아무 키나 눌러주세요(exit 입력 시 종료) : ");
                 String exit = sc.next();
