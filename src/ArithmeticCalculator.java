@@ -27,10 +27,10 @@ public class ArithmeticCalculator {
 
     public void removeResult(int order) {
         if(list.isEmpty()) {
-            System.out.println("삭제할 결과가 없습니다.");
+            System.out.println("삭제할 결과가 없습니다!");
         } else {
             list.remove(order);
-            System.out.println("선택하신 결과를 삭제하였습니다.");
+            System.out.println("선택하신 결과를 삭제하였습니다!");
         }
     }
 }
