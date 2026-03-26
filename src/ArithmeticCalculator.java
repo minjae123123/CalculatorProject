@@ -1,27 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArithmeticCalculator {
+public class ArithmeticCalculator<T extends Number> {
 
-    List<Integer> list;
-    OperatorType operatorType;
+    List<Double> list;
 
     public ArithmeticCalculator() {
         this.list = new ArrayList<>();
     }
 
-    public int calculate(int first_number,int second_number, char operatorType) {
+    public double calculate(T first_number,T second_number, char operatorType) {
+        double num1 = first_number.doubleValue();   //first_number,second_number를 double 타입으로 변환
+        double num2 = second_number.doubleValue();
         OperatorType operatorType1 = OperatorType.fromChar(operatorType);
-        int calculation = operatorType1.calculation(first_number, second_number);
+        double calculation = operatorType1.calculation(num1, num2);
         list.add(calculation);
         return calculation;
     }
 
-    public List<Integer> getList() {
+    public List<Double> getList() {
         return list;
     }
 
-    public void setList(List<Integer> list) {
+    public void setList(List<Double> list) {
         this.list = list;
     }
 

@@ -2,25 +2,25 @@
 public enum OperatorType {
     ADD('+') {
         @Override
-        public int calculation(int a, int b) {
+        public double calculation(double a, double b) {
             return a+b;
         }
     },
     SUB('-') {
         @Override
-        public int calculation(int a, int b) {
+        public double calculation(double a, double b) {
             return a-b;
         }
     },
     MUL('*') {
         @Override
-        public int calculation(int a, int b) {
+        public double calculation(double a, double b) {
             return a*b;
         }
     },
     DIV('/') {
         @Override
-        public int calculation(int a, int b) {
+        public double calculation(double a, double b) {
             return a/b;
         }
     };
@@ -35,7 +35,7 @@ public enum OperatorType {
         return symbol;
     }
 
-    public abstract int calculation(int a, int b);
+    public abstract double calculation(double a, double b);
 
     public static OperatorType fromChar(char symbol) {
         for (OperatorType operatorType :OperatorType.values()) {

@@ -9,21 +9,21 @@ public class App3 {
         ArithmeticCalculator calculator = new ArithmeticCalculator();
 
         while (true) {
-            int first_number;
-            int second_number;
+            Double first_number;
+            Double second_number;
 
             try {
                 System.out.print("첫 번째 숫자 입력 : ");
-                first_number = sc.nextInt();
+                first_number = sc.nextDouble();
 
                 System.out.print("두 번째 숫자 입력: ");
-                second_number = sc.nextInt();
+                second_number = sc.nextDouble();
 
                 System.out.print("연산자를 입력하세요(+, -, *, /) : ");
                 String input = sc.next();
                 char operator = input.charAt(0);
 
-                int calculate = calculator.calculate(first_number, second_number, operator);
+                double calculate = calculator.calculate(first_number, second_number, operator);
                 System.out.println(first_number  +""+ operator + second_number + "=" + calculate);
                 System.out.println("저장된 결과 목록: " +calculator.getList());
 
@@ -44,10 +44,14 @@ public class App3 {
                     break;
                 }
 
+            } catch (NumberFormatException e) {
+                System.out.println("숫자를 올바르게 입력하세요.");
             } catch (InputMismatchException e) {
-                System.out.println("정수만 입력하세요.");
+                System.out.println("입력 형식이 올바르지 않습니다.");
                 sc.nextLine();
             }
         }
+
+        sc.close();
     }
 }
