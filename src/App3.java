@@ -24,16 +24,18 @@ public class App3 {
                 String input = sc.next();
                 char operator = input.charAt(0);
 
+                //연산 후 저장
                 double calculate = calculator.calculate(first_number, second_number, operator);
                 System.out.println(first_number  +""+ operator + second_number + "=" + calculate);
                 System.out.println("저장된 결과 목록: " +calculator.getList());
 
+                //저장된 결과 중 기준값 보다 큰 결과 조회
                 System.out.print("저장된 결과 중 기준값보다 큰 결과를 조회합니다. 기준값을 입력주세요: ");
                 double compareValue = sc.nextDouble();
-
                 List<Double> filteredResults = calculator.getListGreaterThan(compareValue);
                 System.out.println(compareValue + "보다 큰 결과들: " + filteredResults);
 
+                //리스트 중 인덱스 선택해 하나 삭제
                 System.out.print("리스트 중 하나를 삭제하시겠습니까? (삭제하려면 y 입력) : ");
                 String delete_select = sc.next();
                 if(delete_select.equals("y")) {
@@ -43,6 +45,7 @@ public class App3 {
                     System.out.println("현재 리스트: " + calculator.getList());
                 }
 
+                //while문을 빠져나가고 계산기 종료 여부 물어봄
                 System.out.print("더 계산하시겠습니까? 더 계산하시려면 아무 키나 눌러주세요(exit 입력 시 종료) : ");
                 String exit = sc.next();
 
